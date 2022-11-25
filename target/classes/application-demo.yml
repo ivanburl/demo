@@ -1,5 +1,3 @@
-
-
 spring:
   datasource:
     url: "jdbc:postgresql://database-1.cstximqvfcjb.eu-west-2.rds.amazonaws.com:5432/TicTacToe"
