@@ -2,12 +2,12 @@
 
 spring:
   datasource:
-    url: "jdbc:postgresql://database-1.cstximqvfcjb.eu-west-2.rds.amazonaws.com:5432/TicTacToe"
+    url: "jdbc:postgresql://tic-tac-toe-db.c6jamauu7csz.eu-central-1.rds.amazonaws.com:5432/TicTacToe"
     username: postgres
-    password: Ivandr_2004
+    password: 1234567890
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
