@@ -8,6 +8,7 @@ import com.my.tictactoe.demo.repository.PlayerRepository;
 import com.my.tictactoe.demo.security.SecurityService;
 import java.util.List;
 import java.util.UUID;
+import javax.annotation.security.RolesAllowed;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -34,6 +35,7 @@ public class PlayerService {
       throw new ResourceNotFoundException(String.format("Player does nor exist with %s", id));});
   }
 
+
   public Player createPlayer(@NonNull PlayerForm playerForm) {
 
     if (playerRepository.existsByUsername(playerForm.getUsername())) {
@@ -47,9 +49,4 @@ public class PlayerService {
 
     return playerRepository.save(player);
   }
-
-  public Player getCurrentPrincipal() {
-    return findById(securityService.getPrincipal().getPlayer().getId());
-  }
-
 }

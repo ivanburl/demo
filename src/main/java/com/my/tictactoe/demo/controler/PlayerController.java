@@ -30,11 +30,6 @@ public class PlayerController {
   private final SecurityService securityService;
   private final ModelMapper mapper;
 
-  @GetMapping("/current")
-  public PlayerResponse getCurrentUser() {
-    return mapper.map(playerService.getCurrentPrincipal(), PlayerResponse.class);
-  }
-
   @GetMapping
   public List<PlayerResponse> getAll() {
     return playerService.findAll().stream().map((p)->mapper.map(p, PlayerResponse.class)).collect(

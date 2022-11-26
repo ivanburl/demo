@@ -14,6 +14,7 @@
 	<name>TicTacToe</name>
 	<description>Epam project</description>
 	<properties>
+		<spring.profiles.active>dev</spring.profiles.active>
 		<java.version>11</java.version>
 	</properties>
 	<dependencies>
@@ -36,6 +37,23 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-oauth2-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-oauth2-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-oauth2-jose</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-oauth2-resource-server</artifactId>
 		</dependency>
 
 		<dependency>
@@ -161,11 +179,6 @@
 					</plugin>
 				</plugins>
 			</build>
-			<properties>
-				<spring.profiles.active>
-					demo
-				</spring.profiles.active>
-			</properties>
 		</profile>
 	</profiles>
 

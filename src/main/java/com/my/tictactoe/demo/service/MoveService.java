@@ -21,8 +21,8 @@ public class MoveService {
   private final GameService gameService;
   private final GameLogicService gameLogicService;
   private final ModelMapper modelMapper;
-
   private final PlayerService playerService;
+  private final SecurityService securityService;
 
   public List<Move> findAll() {
     return moveRepository.findAll();
@@ -46,12 +46,12 @@ public class MoveService {
         });
 
     if (game.getMoves().size()%2==0) {
-      if (!playerService.getCurrentPrincipal().getId().equals(game.getPlayerX().getId())) {
+      if (!securityService.getPrincipal().getPlayer().getId().equals(game.getPlayerX().getId())) {
         throw new IllegalArgumentsException("Now turn of X player");
       }
     } else
     {
-      if (!playerService.getCurrentPrincipal().getId().equals(game.getPlayerO().getId())) {
+      if (!securityService.getPrincipal().getPlayer().getId().equals(game.getPlayerO().getId())) {
         throw new IllegalArgumentsException("Now turn of O player");
       }
     }
